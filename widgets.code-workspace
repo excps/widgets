@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../Übersicht/widgets"
+		}
+	],
+	"emeraldwalk.runonsave": {
+		"commands": [
+			{
+				"match": "\\.sh$",
+				"cmd": "zsh '*.sh'"
+			},
+			
+		]
+	},
+	"settings": {}
+}
