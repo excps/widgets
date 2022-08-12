@@ -4,7 +4,7 @@ refreshFrequency: 28800
 
 style: """
   bottom: 400px
-  left: 20px
+  left: 12px
   color: #fff
   font-family: Helvetica Neue
   font-size: 14px
@@ -25,11 +25,13 @@ style: """
     display: inline-block
     width: 5em
     color: #66cc22
+    display: inline-block
 
   .value
     font-size: 1em
     line-height: 1.4em
     text-align: right
+    display: inline-block
 """
 
 render: -> """
@@ -41,4 +43,4 @@ update: (output, domEl) ->
   content.empty()
   data = JSON.parse(output)
   for key,val of data
-   content.append "<div><span class=\"label\">#{key}: </span> <span class=\"value\">#{val}</span></div>"
+   content.append "<div><div class=\"label\">#{key}: </div> <div class=\"value\">#{val}</div></div>"

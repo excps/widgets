@@ -14,7 +14,7 @@ refreshFrequency: 3600000
 
 style: """
   bottom: 180px
-  left: 20px
+  left: 12px
   color: #fff
   font-family: Helvetica Neue
 

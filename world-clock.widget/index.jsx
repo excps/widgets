@@ -94,10 +94,9 @@ const container = css`
   display: grid;
   grid-template-columns: auto auto auto;
   border: solid 1px ${bgColor};
-  margin-top: 8px;
   border-radius: 0.6em;
   padding: ${itemPadding};
-  margin: 8px;
+  margin: 12px;
   background-color: ${bgColor} ;
 `;
 
