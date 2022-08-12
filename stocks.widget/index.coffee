@@ -1,6 +1,6 @@
 command: '/opt/homebrew/bin/python3 ./stocks.widget/stocks.py'
 
-refreshFrequency: 28800
+refreshFrequency: 28800000
 
 style: """
   bottom: 400px
