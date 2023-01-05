@@ -1,13 +1,14 @@
 import { css } from "uebersicht";
 
 /************** UI Settings **************/
-const fontColor = "rgba(256, 256, 256, 1)";;
+const fontColor = "rgba(255, 255, 255, 1)";;
 const itemPadding = "5px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
   // See the bottom for the full list of time zones
   { name: "Perth", timezone: "Australia/Perth" },
   { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
+  { name: "Berlin", timezone: "Europe/Berlin" },
 ];
 
 export const className = `
@@ -36,6 +37,11 @@ export const render = ({ output }) => {
     const date = changeTimezone(now, currentCity.timezone);
     const dayDiff = getDayDiff(now, date);
     const hourDiff = getHourDiff(now, date);
+    const myDate = date.toLocaleDateString("en-CA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
 
     return (
       <div className={container}>
@@ -43,7 +49,7 @@ export const render = ({ output }) => {
           <div className={timezone}>
             {dayDiff}, {hourDiff}
           </div>
-          <div className={city}>{currentCity.name}</div>
+          <div className={city}>{currentCity.name} {myDate}</div>
         </div>
         <div className={rightItem}>
           {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}

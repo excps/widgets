@@ -1,10 +1,10 @@
-command: '/opt/homebrew/bin/python3 ./stocks.widget/stocks.py'
+command: '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/stocks.widget/stocks.py'
 
-refreshFrequency: 28800000
+refreshFrequency: 21600000
 
 style: """
-  bottom: 400px
-  left: 12px
+  bottom: 12px
+  right: 12px
   color: #fff
   font-family: Helvetica Neue
   font-size: 14px
