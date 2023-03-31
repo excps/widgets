@@ -7,8 +7,8 @@ const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
   // See the bottom for the full list of time zones
   { name: "Perth", timezone: "Australia/Perth" },
-  { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
   { name: "Berlin", timezone: "Europe/Berlin" },
+  { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
 ];
 
 export const className = `
@@ -46,10 +46,10 @@ export const render = ({ output }) => {
     return (
       <div className={container}>
         <div className={leftItem}>
+          <div className={city}>{currentCity.name} {myDate}</div>
           <div className={timezone}>
             {dayDiff}, {hourDiff}
           </div>
-          <div className={city}>{currentCity.name} {myDate}</div>
         </div>
         <div className={rightItem}>
           {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}

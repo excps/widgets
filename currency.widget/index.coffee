@@ -1,6 +1,6 @@
-command: '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/stocks.widget/stocks.py'
+command: '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/currency.widget/stocks.py'
 
-refreshFrequency: 21600000
+refreshFrequency: 7200000
 
 style: """
   bottom: 12px
@@ -23,7 +23,7 @@ style: """
 
   .label
     display: inline-block
-    width: 5em
+    width: 6em
     color: #66cc22
     display: inline-block
 
@@ -43,4 +43,4 @@ update: (output, domEl) ->
   content.empty()
   data = JSON.parse(output)
   for key,val of data
-   content.append "<div><div class=\"label\">#{key}: </div> <div class=\"value\">#{val}</div></div>"
+   content.append "<div><div class=\"label\">#{key}: </div> <div class=\"value\">#{val.in}</div> - <div class=\"value\">#{val.out}</div></div>"
