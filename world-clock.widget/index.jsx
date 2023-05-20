@@ -2,12 +2,13 @@ import { css } from "uebersicht";
 
 /************** UI Settings **************/
 const fontColor = "rgba(255, 255, 255, 1)";;
-const itemPadding = "5px";
+const itemPadding = "3px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
   // See the bottom for the full list of time zones
   { name: "Perth", timezone: "Australia/Perth" },
   { name: "Berlin", timezone: "Europe/Berlin" },
+  { name: "Cork", timezone: "Europe/Dublin" },
   { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
 ];
 
@@ -102,7 +103,7 @@ const container = css`
   border: solid 1px ${bgColor};
   border-radius: 0.6em;
   padding: ${itemPadding};
-  margin: 12px;
+  margin: 6px;
   background-color: ${bgColor} ;
 `;
 
@@ -118,7 +119,7 @@ const leftItem = css`
 const rightItem = css`
   grid-column-start: 3;
   grid-column-end: 4;
-  font-size: 2em;
+  font-size: 1.4em;
   color: ${fontColor};
   padding: ${itemPadding};
   border: 0 none;
