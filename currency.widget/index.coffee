@@ -23,7 +23,7 @@ style: """
 
   .label
     display: inline-block
-    width: 6em
+    width: 4.6em
     color: #66cc22
     display: inline-block
 
