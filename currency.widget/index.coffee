@@ -7,7 +7,7 @@ style: """
   right: 12px
   color: #fff
   font-family: Helvetica Neue
-  font-size: 14px
+  font-size: 12px
   
   .title
     font-size: 1.6em

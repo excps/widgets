@@ -1,7 +1,9 @@
 import { css } from "uebersicht";
 
 /************** UI Settings **************/
-const fontColor = "rgba(255, 255, 255, 1)";;
+const fontColor = "rgba(255, 255, 255, 1)";
+const cityColor = "rgba(255, 196, 128, 1)";
+const timeColor = "rgba(128, 196, 128, 1)";
 const itemPadding = "3px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
@@ -47,13 +49,14 @@ export const render = ({ output }) => {
     return (
       <div className={container}>
         <div className={leftItem}>
-          <div className={city}>{currentCity.name} {myDate}</div>
+          <div className={city}>{currentCity.name}</div>
+          <div className={date}>{myDate}</div>
           <div className={timezone}>
             {dayDiff}, {hourDiff}
           </div>
         </div>
         <div className={rightItem}>
-          {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}
+          <div className={time}>{padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}</div>
         </div>
       </div>
     );
@@ -133,7 +136,17 @@ const timezone = css`
 `;
 
 const city = css`
+  font-size: 1.2em;
+  color: ${cityColor};
+`;
+
+const date = css`
+  font-size: 0.6em;
+`;
+
+const time = css`
   font-size: 1em;
+  color: ${timeColor};
 `;
 
 /** TimeZone List
