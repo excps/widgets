@@ -49,6 +49,7 @@ refreshFrequency: 60000
 style: """
   top:	#{pos_top}
   left:	#{pos_left}
+  font-size: 12px
   font-family: Avenir Next
 
   .clear 
@@ -58,7 +59,7 @@ style: """
     border: 1px solid #{lineColor}
     border-radius .5em
     background: #{bkground}
-    font-size: 16px
+    font-size: 14px
     font-weight: 500
     width: #{width}
 
@@ -74,7 +75,7 @@ style: """
     width: 20%
   
   .title .header
-    font-size: 2em
+    font-size: 1.4em
     display: inline-block
     float: left
     width: 60%
@@ -97,7 +98,7 @@ style: """
     color: #{infoColor}
 
   .section li value
-    font-size: 0.9em
+    font-size: 1em
     text-align: right
     display: inline-block
     width: 65%  
@@ -158,7 +159,7 @@ style: """
     overflow: hidden
     text-align: center
     font-weight: 600
-    font-size: 12px
+    font-size: 1em
     color: #{dataColor}
     margin-left: 5px
     margin-right: 5px

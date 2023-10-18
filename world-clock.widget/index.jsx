@@ -102,6 +102,7 @@ const changeTimezone = (date, newTimeZone) => {
 
 const container = css`
   display: grid;
+  font-size: 12px;
   grid-template-columns: auto auto auto;
   border: solid 1px ${bgColor};
   border-radius: 0.6em;

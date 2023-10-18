@@ -1,4 +1,4 @@
-command: '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/currency.widget/stocks.py'
+command: '/opt/homebrew/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/currency.widget/stocks.py'
 
 refreshFrequency: 7200000
 
