@@ -8,6 +8,7 @@ const itemPadding = "3px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
   // See the bottom for the full list of time zones
+  { name: "Calgary", timezone: "America/Edmonton" },
   { name: "Perth", timezone: "Australia/Perth" },
   { name: "Berlin", timezone: "Europe/Berlin" },
   { name: "Cork", timezone: "Europe/Dublin" },
@@ -15,8 +16,8 @@ const cities = [
 ];
 
 export const className = `
-	left: 0px;
-	bottom: 0px;
+	left: 6px;
+	bottom: 132px;
 	font-family: Helvetica;
 	z-index: 1;
 `;
@@ -44,7 +45,7 @@ export const render = ({ output }) => {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-    })
+    });
 
     return (
       <div className={container}>
@@ -56,7 +57,9 @@ export const render = ({ output }) => {
           </div>
         </div>
         <div className={rightItem}>
-          <div className={time}>{padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}</div>
+          <div className={time}>
+            {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}
+          </div>
         </div>
       </div>
     );
@@ -93,7 +96,7 @@ const changeTimezone = (date, newTimeZone) => {
   const invdate = new Date(
     date.toLocaleString("en-US", {
       timeZone: newTimeZone,
-    })
+    }),
   );
 
   const diff = date.getTime() - invdate.getTime();
@@ -108,7 +111,7 @@ const container = css`
   border-radius: 0.6em;
   padding: ${itemPadding};
   margin: 6px;
-  background-color: ${bgColor} ;
+  background-color: ${bgColor};
 `;
 
 const leftItem = css`

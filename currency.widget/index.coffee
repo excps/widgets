@@ -3,8 +3,8 @@ command: '/opt/homebrew/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/w
 refreshFrequency: 7200000
 
 style: """
-  bottom: 12px
-  right: 12px
+  bottom: 6px
+  left: 12px
   color: #fff
   font-family: Helvetica Neue
   font-size: 12px
