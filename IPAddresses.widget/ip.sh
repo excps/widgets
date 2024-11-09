@@ -47,8 +47,7 @@ while read line; do
 done <<< "$(networksetup -listnetworkserviceorder | grep 'Hardware Port')"
 
 # Get WAN address
-response=$(curl -s https://api.ipify.org/?format=json);
-ip=$(echo "$response" | jq -r '.ip')
+ip=$(curl -s https://api.ipify.org);
 interfaces+=("{\"iface\":\"WAN\",\"address\":\"$ip\"}")
 
 # Output interfaces in JSON format
