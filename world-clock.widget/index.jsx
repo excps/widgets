@@ -8,11 +8,11 @@ const itemPadding = "3px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
   // See the bottom for the full list of time zones
-  { name: "Calgary", timezone: "America/Edmonton" },
   { name: "Perth", timezone: "Australia/Perth" },
   { name: "Berlin", timezone: "Europe/Berlin" },
   { name: "Cork", timezone: "Europe/Dublin" },
   { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
+  { name: "Calgary", timezone: "America/Edmonton" },
 ];
 
 export const className = `
@@ -105,7 +105,7 @@ const changeTimezone = (date, newTimeZone) => {
 
 const container = css`
   display: grid;
-  font-size: 12px;
+  font-size: 13px;
   grid-template-columns: auto auto auto;
   border: solid 1px ${bgColor};
   border-radius: 0.6em;

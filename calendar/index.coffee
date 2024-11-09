@@ -49,7 +49,7 @@ style: """
     border-radius: 50%
 
   .grey
-    color: rgba(#C0C0C0, .7)
+    color: rgba(#c0c0c0, 1)
 """
 
 render: -> """
