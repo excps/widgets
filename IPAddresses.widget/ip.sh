@@ -47,8 +47,9 @@ while read line; do
 done <<< "$(networksetup -listnetworkserviceorder | grep 'Hardware Port')"
 
 # Get WAN address
-WAN=$(dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null);
-[ $? -eq 0 ] && [[ -n $WAN ]] && interfaces+=("{\"iface\":\"WAN\",\"address\":\"$WAN\"}")
+response=$(curl -s https://api.ipify.org/?format=json);
+ip=$(echo "$response" | jq -r '.ip')
+interfaces+=("{\"iface\":\"WAN\",\"address\":\"$ip\"}")
 
 # Output interfaces in JSON format
 echo "{\"interfaces\":[$(printf '%s\n' $(IFS=,; echo "${interfaces[*]}"))]}" | tr '\n' ' '

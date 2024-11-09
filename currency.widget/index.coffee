@@ -1,13 +1,13 @@
-command: '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/currency.widget/stocks.py'
+command: '/opt/homebrew/bin/python3 /Users/andi/Applications/Scripts/Ubersicht/widgets/currency.widget/stocks.py'
 
 refreshFrequency: 7200000
 
 style: """
-  bottom: 12px
-  right: 12px
+  bottom: 6px
+  left: 12px
   color: #fff
   font-family: Helvetica Neue
-  font-size: 14px
+  font-size: 12px
   
   .title
     font-size: 1.6em

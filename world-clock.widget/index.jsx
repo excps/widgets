@@ -1,7 +1,9 @@
 import { css } from "uebersicht";
 
 /************** UI Settings **************/
-const fontColor = "rgba(255, 255, 255, 1)";;
+const fontColor = "rgba(255, 255, 255, 1)";
+const cityColor = "rgba(255, 196, 128, 1)";
+const timeColor = "rgba(128, 196, 128, 1)";
 const itemPadding = "3px";
 const bgColor = "rgba(64, 64, 64, 0.2)";
 const cities = [
@@ -10,11 +12,12 @@ const cities = [
   { name: "Berlin", timezone: "Europe/Berlin" },
   { name: "Cork", timezone: "Europe/Dublin" },
   { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
+  { name: "Calgary", timezone: "America/Edmonton" },
 ];
 
 export const className = `
-	left: 0px;
-	bottom: 0px;
+	left: 6px;
+	bottom: 132px;
 	font-family: Helvetica;
 	z-index: 1;
 `;
@@ -42,18 +45,21 @@ export const render = ({ output }) => {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-    })
+    });
 
     return (
       <div className={container}>
         <div className={leftItem}>
-          <div className={city}>{currentCity.name} {myDate}</div>
+          <div className={city}>{currentCity.name}</div>
+          <div className={date}>{myDate}</div>
           <div className={timezone}>
             {dayDiff}, {hourDiff}
           </div>
         </div>
         <div className={rightItem}>
-          {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}
+          <div className={time}>
+            {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}
+          </div>
         </div>
       </div>
     );
@@ -90,7 +96,7 @@ const changeTimezone = (date, newTimeZone) => {
   const invdate = new Date(
     date.toLocaleString("en-US", {
       timeZone: newTimeZone,
-    })
+    }),
   );
 
   const diff = date.getTime() - invdate.getTime();
@@ -99,12 +105,13 @@ const changeTimezone = (date, newTimeZone) => {
 
 const container = css`
   display: grid;
+  font-size: 13px;
   grid-template-columns: auto auto auto;
   border: solid 1px ${bgColor};
   border-radius: 0.6em;
   padding: ${itemPadding};
   margin: 6px;
-  background-color: ${bgColor} ;
+  background-color: ${bgColor};
 `;
 
 const leftItem = css`
@@ -133,7 +140,17 @@ const timezone = css`
 `;
 
 const city = css`
+  font-size: 1.2em;
+  color: ${cityColor};
+`;
+
+const date = css`
+  font-size: 0.6em;
+`;
+
+const time = css`
   font-size: 1em;
+  color: ${timeColor};
 `;
 
 /** TimeZone List
