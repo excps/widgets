@@ -12,12 +12,13 @@ const cities = [
   { name: "Berlin", timezone: "Europe/Berlin" },
   { name: "Cork", timezone: "Europe/Dublin" },
   { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
+  { name: "Toronto", timezone: "America/Toronto" },
   { name: "Calgary", timezone: "America/Edmonton" },
 ];
 
 export const className = `
 	left: 6px;
-	bottom: 132px;
+	bottom: 224px;
 	font-family: Helvetica;
 	z-index: 1;
 `;
@@ -52,13 +53,13 @@ export const render = ({ output }) => {
         <div className={leftItem}>
           <div className={city}>{currentCity.name}</div>
           <div className={date}>{myDate}</div>
-          <div className={timezone}>
-            {dayDiff}, {hourDiff}
-          </div>
         </div>
         <div className={rightItem}>
           <div className={time}>
             {padZero(date.getHours(), 2)}:{padZero(date.getMinutes(), 2)}
+          </div>
+          <div className={timezone}>
+            {dayDiff}, {hourDiff}
           </div>
         </div>
       </div>
@@ -105,13 +106,14 @@ const changeTimezone = (date, newTimeZone) => {
 
 const container = css`
   display: grid;
-  font-size: 13px;
+  font-size: 14px;
   grid-template-columns: auto auto auto;
   border: solid 1px ${bgColor};
   border-radius: 0.6em;
   padding: ${itemPadding};
   margin: 6px;
   background-color: ${bgColor};
+  width: 200px;
 `;
 
 const leftItem = css`
@@ -126,7 +128,6 @@ const leftItem = css`
 const rightItem = css`
   grid-column-start: 3;
   grid-column-end: 4;
-  font-size: 1.4em;
   color: ${fontColor};
   padding: ${itemPadding};
   border: 0 none;
@@ -136,20 +137,17 @@ const rightItem = css`
 const timezone = css`
   color: ${fontColor};
   font-size: 0.8em;
-  padding: 0 0 5px 0;
 `;
 
 const city = css`
-  font-size: 1.2em;
   color: ${cityColor};
 `;
 
 const date = css`
-  font-size: 0.6em;
+  font-size: 0.8em;
 `;
 
 const time = css`
-  font-size: 1em;
   color: ${timeColor};
 `;
 
