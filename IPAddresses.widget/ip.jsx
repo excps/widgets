@@ -15,7 +15,7 @@ export const refreshFrequency = 10000;
 
 // Base layout
 export const className = {
-  bottom: "500px",
+  bottom: "545px",
   left: "12px",
   color: "#fff",
   fontFamily: "Helvetica Neue",
@@ -26,7 +26,7 @@ export const className = {
 // Render the widget
 export const render = ({ output, error }) => {
   if (output) {
-    console.log(output);
+    // console.log(output);
     // Collect Interfaces from JSON
     const interfaces = JSON.parse(output).interfaces;
 

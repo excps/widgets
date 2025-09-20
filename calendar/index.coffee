@@ -51,11 +51,17 @@ style: """
   .grey
     color: rgba(#c0c0c0, 1)
 """
+# Function to execute the open command
+click: ->
+    alert
+    cmd = "open -a /System/Applications/Calendar.app"
+    return run cmd
 
+# Render the widget with a clickable link
 render: -> """
-  <div class="main">
+  <div class="main" >
     <table>
-      <thead>
+      <thead id="t-head">
       </thead>
       <tbody>
       </tbody>
